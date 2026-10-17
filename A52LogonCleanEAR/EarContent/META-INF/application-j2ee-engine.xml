@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<application-j2ee-engine xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="application-j2ee-engine.xsd"></application-j2ee-engine>
+<application-j2ee-engine xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="application-j2ee-engine.xsd">
+    <reference reference-type="hard">
+        <reference-target provider-name="sap.com" target-type="application">com.sap.security.core.logon</reference-target>
+    </reference>
+    <provider-name>lukoil.test</provider-name>
+</application-j2ee-engine>

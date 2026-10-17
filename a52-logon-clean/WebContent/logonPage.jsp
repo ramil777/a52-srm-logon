@@ -53,12 +53,12 @@ if (otherDevicesEnabled) {
       <table id="tblInnerCnt" dir="ltr" cellpadding="0" cellspacing="0">
     <% } %>
 				<tr>					
-					<td valign="top"><div class="urBrandImage"><sap:brandimage type="main"/></div></td>
+					<td valign="top"><div class="urBrandImage"><span style="display:none" aria-hidden="true"><sap:brandimage type="main"/></span><img src="<%=webpath%>layout/a52-lukoil-branding.jpg" alt="LUKOIL" width="290" height="360"></div></td>
 					<td width="100%"></td>
 					<td>					
 					 <table height="360px" cellPadding="0" cellSpacing="0">					
 							<tr>								
-								<td valign="top"><div class="urProductName"><sap:brandimage type="second"/></div></td>
+								<td valign="top"><div class="urProductName"><span style="display:none" aria-hidden="true"><sap:brandimage type="second"/></span><img src="<%=webpath%>layout/a52-gsrm-title.gif" alt="G-SRM Supplier Relationship Management system" width="325" height="84"></div></td>
 							</tr>							
 							<tr>
 								<td valign="top" align="left">							
@@ -168,6 +168,15 @@ if (otherDevicesEnabled) {
 										</div>																	
 								</td>
 							</tr>
+							<!-- A53 supplier links: approved legacy URLs -->
+							<tr><td align="left"><div class="urTxtStd">
+								<div><a class="urLnk" href="https://procurementluoc.lukoil-international.com/regform">Self-registration (for new suppliers)/&#1057;&#1072;&#1084;&#1086;&#1088;&#1077;&#1075;&#1080;&#1089;&#1090;&#1088;&#1072;&#1094;&#1080;&#1103; (&#1076;&#1083;&#1103; &#1085;&#1086;&#1074;&#1099;&#1093; &#1087;&#1086;&#1089;&#1090;&#1072;&#1074;&#1097;&#1080;&#1082;&#1086;&#1074;)</a></div>
+								<div><a class="urLnk" href="https://a62.lukoil-international.com/logoff/The_first_time_login.pdf">First time login (English)</a></div>
+								<div><a class="urLnk" href="https://a62.lukoil-international.com/logoff/Instruction_for_suppliers_request.pdf">How to create response for request of commercial offers (English)</a></div>
+								<div><a class="urLnk" href="https://a62.lukoil-international.com/logoff/The_first_time_login_ru.pdf">&#1055;&#1077;&#1088;&#1074;&#1099;&#1081; &#1074;&#1093;&#1086;&#1076; &#1074; &#1089;&#1080;&#1089;&#1090;&#1077;&#1084;&#1091; (&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;)</a></div>
+								<div><a class="urLnk" href="https://a62.lukoil-international.com/logoff/Instruction_for_suppliers_request_ru.pdf">&#1055;&#1086;&#1076;&#1072;&#1095;&#1072; &#1087;&#1088;&#1077;&#1076;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1081; &#1082; &#1079;&#1072;&#1087;&#1088;&#1086;&#1089;&#1091; &#1082;&#1086;&#1084;&#1084;&#1077;&#1088;&#1095;&#1077;&#1089;&#1082;&#1086;&#1075;&#1086; &#1087;&#1088;&#1077;&#1076;&#1083;&#1086;&#1078;&#1077;&#1085;&#1080;&#1103; (&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081;)</a></div>
+								<div><a class="urLnk" href="mailto:Vendors@lukoil-international.uz">&#1055;&#1088;&#1086;&#1073;&#1083;&#1077;&#1084;&#1099; &#1087;&#1088;&#1080; &#1074;&#1093;&#1086;&#1076;&#1077; &#1074; &#1089;&#1080;&#1089;&#1090;&#1077;&#1084;&#1091;/Logon Problems? Vendors@lukoil-international.uz</a></div>
+							</div></td></tr>
 							<tr>
 								<td valign="bottom">									
 									<div class="urCopyrightFrame">									 
