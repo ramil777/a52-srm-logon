@@ -1,0 +1,23 @@
+# Track only the two SAP projects and repository configuration.
+/*
+!/.gitignore
+!/.gitattributes
+!/README.md
+!/a52-logon-clean/
+!/A52LogonCleanEAR/
+
+# Generated output and packaged deployment artifacts.
+**/build/
+**/bin/
+**/.apt_generated/
+**/target/
+**/*.ear
+**/*.war
+**/*.class
+**/*.log
+**/*.bak
+**/.git/
+
+# Do not publish SAP API libraries. Keep the original WAR core library.
+**/*.jar
+!/a52-logon-clean/WebContent/WEB-INF/lib/tc~sec~ume~logon~ui_core.jar

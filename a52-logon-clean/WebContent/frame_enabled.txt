@@ -1,0 +1,68 @@
+<%@ page import = "com.sap.security.core.*" %>
+<%@ page import = "com.sap.engine.applications.security.logon.pages.*" %>
+<%@ page import = "java.util.regex.*" %>
+<%@ page import = "com.sap.tc.logging.*" %>
+<script language="JavaScript">
+var blockPage = false;
+</script>
+
+<%
+// Check if the logon application can be embedded in pages from different locations. If not, it will not be displayed at all.
+boolean isFrameEmbeddingDisabled = InternalUMFactory.getConfiguration().getBooleanDynamic(Utils.BLOCK_EXT_LOGON_APP_EMBEDDING, false);
+if (isFrameEmbeddingDisabled) {
+%>
+
+<script language="JavaScript">
+try {
+	if (top.document.domain != self.document.domain) {
+		blockPage = true;
+	}
+} catch (error) {
+	// This will happen if the browser running the page that embeds the logon page is in a different domain.
+	// Essentially this is the very problem fixed by this JavaScript, but not all browsers ban access between the document objects of the two frames
+	blockPage = true;
+}
+</script>
+
+<%
+}
+%>
+
+<script language="JavaScript">
+function writeMessage() {
+	document.write("<h2>An unexpected problem has occurred. Please contact your system administrator and show them this message.</h2>");
+}
+
+if (blockPage) {
+	writeMessage();
+	
+	// According to the tests: 
+	// IE works with document.execCommand() and throws exception if window.stop() is used
+	// Firefox and Chrome work only with window.stop() but do not throw exception if document.execCommand() is used.
+	
+	// For IE 11 the appName object below no longer contains Explorer as the previous versions did. So the following solution no longer works for IE11:
+	//var browserName = navigator.appName;
+	//if (browserName.indexOf("Explorer") > -1) {
+	//	writeMessage();
+	//	document.execCommand("Stop");
+	//} else {
+	//	writeMessage();
+	//	window.stop();
+	//}
+
+	// Detecting the browser based on appName or another navigator object is not very trustworthy and future proof. Hopefully a longer lasting solution is:
+	try {
+		window.stop();
+		//document.write("<h2>window.stop() success!</h2>"); //Actually this line could never be printed as FF and Chrome will stop on previous line
+	} catch (error) {
+		//document.write("<h2>window.stop() did not work. Exception is: "+error+".</h2>");
+		try {
+			document.execCommand("Stop");
+			//document.write("<h2>document.execCommand(\"Stop\") success!</h2>"); // This would be printed in case of IE
+		} catch (error) {
+			//document.write("<h2>document.execCommand(\"Stop\") did not work. Exception is: "+error+".</h2>");
+			document.write("<h2>This browser cannot prevent the Logon Page frame from loading!<br>Do not submit your credentials and contact your system administrator!</h2>");
+		}
+	}
+}
+</script>
