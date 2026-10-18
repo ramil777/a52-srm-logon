@@ -42,8 +42,8 @@ if (otherDevicesEnabled) {
 	<% } %>
 	<tr>
 	  <% if(uiFrameVisible){ %>
-		<td class="uiRowAlign">
-			<img src="<%=webpath%>layout/lf_sl.png" width="29" height="360">
+		<td class="uiRowAlign" style="background-image:url('<%=webpath%>layout/lf_sl.png');background-repeat:repeat-y;background-position:top left;">
+			<img src="<%=webpath%>layout/lf_sl.png" width="29" height="360" style="visibility:hidden;">
 		</td>
 		<% } %>
 		<td width="100%">		
@@ -191,8 +191,8 @@ if (otherDevicesEnabled) {
 			</table>			
 		</td>		
 		<% if(uiFrameVisible){ %>
-		<td class="uiRowAlign">
-			<img src="<%=webpath%>layout/lf_sr.png" width="27" height="360">
+		<td class="uiRowAlign" style="background-image:url('<%=webpath%>layout/lf_sr.png');background-repeat:repeat-y;background-position:top left;">
+			<img src="<%=webpath%>layout/lf_sr.png" width="27" height="360" style="visibility:hidden;">
 		</td>
 		<% } %>
 	</tr>
